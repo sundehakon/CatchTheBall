@@ -14,7 +14,6 @@ GAME_WON = 2
 game_state = GAME_RUNNING
 
 center_x = size[0] // 2
-center_y = size[1] // 2
 rect_width = 90
 rect_height = 20
 speed = 80
@@ -67,12 +66,12 @@ while game_state == GAME_RUNNING:
     
     for circle in circles:
         circle.fall()
-        if circle.y > size[1] and not is_collision(circle, (center_x, center_y, rect_width, rect_height)):
+        if circle.y > size[1] and not is_collision(circle, (center_x, 550, rect_width, rect_height)):
             points -= 1 
 
     new_circles = []
     for circle in circles:
-        if is_collision(circle, (center_x, center_y, rect_width, rect_height)):
+        if is_collision(circle, (center_x, 550, rect_width, rect_height)):
             points += 5
         else:
             new_circles.append(circle)
@@ -82,7 +81,7 @@ while game_state == GAME_RUNNING:
 
     screen.fill((255, 255, 255))
 
-    pygame.draw.rect(screen, (255, 0, 0), (center_x, center_y, rect_width, rect_height))
+    pygame.draw.rect(screen, (255, 0, 0), (center_x, 550, rect_width, rect_height))
 
     for circle in circles:
         circle.draw(screen)
