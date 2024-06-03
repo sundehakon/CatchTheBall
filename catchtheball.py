@@ -79,7 +79,7 @@ while game_state == GAME_RUNNING:
 
     screen.fill((255, 255, 255))
 
-    pygame.draw.rect(screen, (255, 0, 0), (center_x, 550, rect_width, rect_height))
+    pygame.draw.rect(screen, (255, 0, 0), (center_x, 550, rect_width, rect_height), border_radius = 4)
 
     for circle in circles:
         circle.draw(screen)
