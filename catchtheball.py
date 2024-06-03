@@ -56,9 +56,7 @@ while game_state == GAME_RUNNING:
                 center_x -= speed
             if event.key == pygame.K_RIGHT:
                 center_x += speed
-            if event.key == pygame.K_UP:
-                points += 10
-
+                
     if random.randint(1, 30) == 1:  
         x = random.randint(0, size[0])
         new_circle = Circle(x, 0, 30, (0, 0, 255))  
